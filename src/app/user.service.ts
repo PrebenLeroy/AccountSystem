@@ -13,4 +13,9 @@ export class UserService {
   setUserLoggedIn(){
     this.isUserLoggedIn = true;
   }
+
+  getUserLoggedIn(){
+    return this.isUserLoggedIn;
+  }
+
 }
