@@ -7,6 +7,13 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { RouterModule, Routes } from '@angular/router';
+const appRoutes: Routes = [
+  {
+    path: 'login',
+  }
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule
   ],
