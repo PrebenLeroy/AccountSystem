@@ -1,3 +1,5 @@
+import { AuthguardGuard } from './authguard.guard';
+import { UserService } from './user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +17,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [AuthguardGuard],
     component: DashboardComponent
   }
 ]
@@ -32,7 +35,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
